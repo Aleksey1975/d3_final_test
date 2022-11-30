@@ -1,0 +1,15 @@
+<!--  наследуемся от шаблона default.html, который мы создавали для flatpages -->
+{% extends 'flatpages/default.html' %}
+
+{% load custom_filters %}
+
+{% block title %}
+
+{% endblock title %}
+
+<!-- В контенте на странице мы выводим сам товар, идентификатор которого был передан в url -->
+{% block content %}
+<h5>{{ one_news.title | censor}}</h5>
+<p>{{ one_news.data | date:'M d Y' }}</p>
+<p>{{ one_news.content | censor}}</p>
+{% endblock content %}
